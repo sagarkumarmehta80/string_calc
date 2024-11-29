@@ -5,7 +5,10 @@ function App() {
     return (
         <div className="App">
             <h1>
-                <StringCalculator string="1,4,6" />
+                <StringCalculator
+                    string="1,4;3
+                34"
+                />
             </h1>
         </div>
     );

@@ -1,6 +1,6 @@
 const StringCalculator = ({ string = '' }) => {
     let trimmedString = string.trim();
-    let splittedString = trimmedString.split(',');
+    let splittedString = trimmedString.split(/[\\n,; ]+/);
     if (trimmedString.length > 0) {
         return splittedString
             .map((val) => Number(val))
