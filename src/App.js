@@ -4,12 +4,7 @@ import StringCalculator from './component/StringCalculator/StringCalculator';
 function App() {
     return (
         <div className="App">
-            <h1>
-                <StringCalculator
-                    string="1,4;3
-                34"
-                />
-            </h1>
+            <StringCalculator string="1,4;334,-3,34,-4" />
         </div>
     );
 }
