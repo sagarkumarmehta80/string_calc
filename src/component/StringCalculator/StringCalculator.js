@@ -1,6 +1,13 @@
 const StringCalculator = ({ string = '' }) => {
+    let delimiters = '\\n, ';
+    let isSeperateLinePresent = string.substring(0, 2) === '//';
+    if (isSeperateLinePresent) {
+        delimiters += string.substring(2, 3);
+        string = string.substring(3, string.length);
+    }
     let trimmedString = string.trim();
-    let splittedString = trimmedString.split(/[\\n,; ]+/);
+    let regex = new RegExp(`[${delimiters}]+`);
+    let splittedString = trimmedString.split(regex);
     let errorText = 'Negative numbers not allowed';
     let errors = [];
     let sum = null;
@@ -23,7 +30,7 @@ const StringCalculator = ({ string = '' }) => {
                     <div>
                         Errors:
                         {errors.map((val) => (
-                            <div>{val}</div>
+                            <div key={val}>{val}</div>
                         ))}
                     </div>
                 )}
